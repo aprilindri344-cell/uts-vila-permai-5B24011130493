@@ -1,0 +1,132 @@
+:root {
+  --hijau: #1f5c4a;
+  --hijau-gelap: #153f33;
+  --krem: #f3f7f4;
+  --putih: #ffffff;
+  --teks: #1d2a26;
+  --abu: #5d6b66;
+  --garis: #cfdcd5;
+  --aksen: #e2a23b;
+  --merah: #b3261e;
+  --hijau-muda: #e1efe8;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--teks);
+  background: var(--krem);
+}
+
+.site-header {
+  padding: 32px 24px 16px;
+  background: var(--hijau);
+  color: var(--putih);
+  text-align: center;
+}
+.site-header__title { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 2.4rem; }
+.site-header__tagline { margin: 8px auto 16px; max-width: 520px; }
+
+.site-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+.site-nav__link {
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--putih);
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.site-nav__link:hover, .site-nav__link:focus-visible { background: var(--hijau-gelap); border-color: var(--aksen); }
+
+.site-main { max-width: 1000px; margin: 0 auto; padding: 8px 20px 32px; }
+.section { margin: 32px 0; }
+.section__title { margin: 0 0 16px; font-family: Georgia, serif; font-size: 1.6rem; color: var(--hijau-gelap); }
+
+.search { margin-bottom: 16px; }
+.search__label { display: block; margin-bottom: 4px; font-weight: 600; }
+.search__input { width: 100%; max-width: 420px; padding: 10px 12px; border: 2px solid var(--garis); border-radius: 6px; font-size: 1rem; }
+.search__input:focus { outline: none; border-color: var(--hijau); }
+.search__empty { padding: 12px; margin: 0 0 16px; border-left: 4px solid var(--aksen); background: var(--putih); }
+
+.villa-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+.villa-card {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  background: var(--putih);
+  animation: muncul 0.5s ease-out;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.villa-card:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(21, 63, 51, 0.15); }
+.villa-card__name { margin: 0 0 4px; font-family: Georgia, serif; font-size: 1.3rem; color: var(--hijau); }
+.villa-card__meta { margin: 0; color: var(--abu); font-size: 0.95rem; }
+.villa-card__price { margin: 12px 0; font-size: 1.4rem; font-weight: 700; color: var(--hijau-gelap); }
+.villa-card__price small { font-size: 0.85rem; font-weight: 400; color: var(--abu); }
+.villa-card__facilities { margin: 0 0 12px; padding-left: 20px; }
+.villa-card__status { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+.villa-card__status--ready { background: var(--hijau-muda); color: var(--hijau-gelap); }
+.villa-card__status--full { background: #f8dcd9; color: var(--merah); }
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 20px;
+  padding: 24px;
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  background: var(--putih);
+}
+.booking-form__field { display: flex; flex-direction: column; }
+.booking-form__label { margin-bottom: 4px; font-weight: 600; }
+.booking-form__input { padding: 10px 12px; border: 2px solid var(--garis); border-radius: 6px; font-size: 1rem; background: var(--putih); }
+.booking-form__input:focus { outline: none; border-color: var(--hijau); }
+.booking-form__input--invalid { border-color: var(--merah); }
+.booking-form__error { min-height: 1.2em; margin-top: 2px; font-size: 0.85rem; color: var(--merah); }
+.booking-form__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn { padding: 12px 22px; border: 2px solid var(--hijau); border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s, color 0.2s, transform 0.1s; }
+.btn:active { transform: scale(0.97); }
+.btn--primary { background: var(--hijau); color: var(--putih); }
+.btn--primary:hover { background: var(--hijau-gelap); }
+.btn--secondary { background: var(--putih); color: var(--hijau); }
+.btn--secondary:hover { background: var(--hijau-muda); }
+
+.summary, .orders { margin: 20px 0 0; padding: 20px; border: 1px solid var(--garis); border-left: 6px solid var(--aksen); border-radius: 10px; background: var(--putih); }
+.summary__title, .orders__title { margin: 0 0 8px; font-size: 1.1rem; color: var(--hijau-gelap); }
+.summary__text { margin: 0; white-space: pre-line; }
+.summary--ok { border-left-color: var(--hijau); }
+.summary--error { border-left-color: var(--merah); }
+.orders__list { margin: 0 0 16px; padding-left: 20px; }
+.orders__item { margin-bottom: 8px; }
+
+.site-footer { padding: 24px; background: var(--hijau-gelap); color: var(--putih); text-align: center; }
+.site-footer__title { margin: 0 0 8px; font-size: 1.2rem; }
+.site-footer__text { margin: 2px 0; }
+.site-footer__small { margin: 12px 0 0; font-size: 0.85rem; opacity: 0.8; }
+
+@keyframes muncul {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .villa-list, .booking-form { grid-template-columns: 1fr; }
+  .site-header__title { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .site-main { padding: 8px 12px 24px; }
+  .booking-form { padding: 16px; }
+  .btn { width: 100%; }
+  .site-nav__link { padding: 6px 10px; font-size: 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .villa-card { animation: none; }
+  .villa-card:hover { transform: none; }
+}
