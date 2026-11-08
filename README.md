@@ -31,3 +31,6 @@ Total = (harga per malam + tamu tambahan x biaya tambahan) x jumlah malam
 
 ## Tangkapan Layar
 ![Tangkapan layar halaman Vila Permai](screenshot.png)
+
+## Deskripsi
+**Demo (GitHub Pages):** https://aprilindri344-cell.github.io/uts-vila-permai-5B24011130493/
