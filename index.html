@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pesan vila di kawasan Puncak, Bogor, langsung dari halaman ini.">
+  <title>Vila Permai – Pemesanan Vila Puncak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-header__title">Vila Permai</h1>
+    <p class="site-header__tagline">Tiga vila keluarga di Puncak, Bogor. Lihat harga, hitung total, lalu pesan.</p>
+    <nav class="site-nav" aria-label="Menu utama">
+      <a class="site-nav__link" href="#vila">Pilihan Vila</a>
+      <a class="site-nav__link" href="#pesan">Pesan</a>
+      <a class="site-nav__link" href="#riwayat">Pesanan Saya</a>
+      <a class="site-nav__link" href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="section" id="vila" aria-labelledby="judul-vila">
+      <h2 class="section__title" id="judul-vila">Pilihan Vila</h2>
+      <div class="search">
+        <label class="search__label" for="cari">Cari vila (nama, lokasi, atau fasilitas)</label>
+        <input class="search__input" type="search" id="cari" placeholder="Contoh: kolam renang">
+      </div>
+      <p class="search__empty" id="kosong" hidden>Tidak ada vila yang cocok. Coba kata kunci lain.</p>
+      <div class="villa-list" id="daftar-vila"></div>
+    </section>
+
+    <section class="section" id="pesan" aria-labelledby="judul-pesan">
+      <h2 class="section__title" id="judul-pesan">Formulir Pemesanan</h2>
+      <form class="booking-form" id="form-pesan" novalidate>
+        <div class="booking-form__field">
+          <label class="booking-form__label" for="nama">Nama tamu</label>
+          <input class="booking-form__input" type="text" id="nama" autocomplete="name">
+          <span class="booking-form__error" id="err-nama" role="alert"></span>
+        </div>
+        <div class="booking-form__field">
+          <label class="booking-form__label" for="vila">Pilih vila</label>
+          <select class="booking-form__input" id="vila"></select>
+          <span class="booking-form__error" id="err-vila" role="alert"></span>
+        </div>
+        <div class="booking-form__field">
+          <label class="booking-form__label" for="checkin">Tanggal check-in</label>
+          <input class="booking-form__input" type="date" id="checkin">
+          <span class="booking-form__error" id="err-checkin" role="alert"></span>
+        </div>
+        <div class="booking-form__field">
+          <label class="booking-form__label" for="checkout">Tanggal check-out</label>
+          <input class="booking-form__input" type="date" id="checkout">
+          <span class="booking-form__error" id="err-checkout" role="alert"></span>
+        </div>
+        <div class="booking-form__field">
+          <label class="booking-form__label" for="tamu">Jumlah tamu (1–10)</label>
+          <input class="booking-form__input" type="number" id="tamu" min="1" max="10" value="2">
+          <span class="booking-form__error" id="err-tamu" role="alert"></span>
+        </div>
+        <div class="booking-form__actions">
+          <button class="btn btn--secondary" type="button" id="btn-cek">Cek Ketersediaan</button>
+          <button class="btn btn--primary" type="submit">Pesan Sekarang</button>
+        </div>
+      </form>
+
+      <article class="summary" id="hasil" aria-live="polite">
+        <h3 class="summary__title">Ringkasan Biaya</h3>
+        <p class="summary__text" id="hasil-teks">Isi formulir, lalu tekan "Cek Ketersediaan" untuk melihat total biaya.</p>
+      </article>
+    </section>
+
+    <section class="section" id="riwayat" aria-labelledby="judul-riwayat">
+      <h2 class="section__title" id="judul-riwayat">Pesanan Saya</h2>
+      <article class="orders">
+        <h3 class="orders__title">Pesanan yang tersimpan di perangkat ini</h3>
+        <ul class="orders__list" id="daftar-pesanan"></ul>
+        <button class="btn btn--secondary" type="button" id="btn-hapus">Hapus Semua Pesanan</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="kontak">
+    <h2 class="site-footer__title">Hubungi Pemilik Vila</h2>
+    <p class="site-footer__text">Pak Hendra – WhatsApp: 0812-0000-0000</p>
+    <p class="site-footer__text">Alamat: Kawasan Puncak, Kabupaten Bogor, Jawa Barat</p>
+    <p class="site-footer__small">&copy; 2026 Vila Permai. Pesanan dikonfirmasi pemilik melalui WhatsApp.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
